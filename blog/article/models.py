@@ -4,6 +4,7 @@ from login.models import User
 
 
 class Article(models.Model):
+    objects: models.QuerySet
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(auto_now=True)
     
