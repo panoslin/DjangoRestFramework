@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'rest_framework_filters',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    '"corsheaders.middleware.CorsMiddleware"',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -141,3 +143,14 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_HOST = 'emailhost.com'
 EMAIL_PORT = 25
+
+
+# CORS CONFIG
+# https://pypi.org/project/django-cors-headers/
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+]
+# CORS_ALLOWED_ORIGIN_REGEXES = [
+#     r"^https://\w+\.example\.com$",
+# ]
