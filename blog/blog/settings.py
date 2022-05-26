@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'login.apps.LoginConfig',
     'article.apps.ArticleConfig',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,3 +126,11 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'login.User'
+
+AUTHENTICATION_BACKENDS = [
+    # 1. default backend
+    'django.contrib.auth.backends.ModelBackend',
+    # 2. custom backend
+    'login.auth.ActiveDirectory.ADBackend'
+]
+
