@@ -43,17 +43,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'activity_log'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    '"corsheaders.middleware.CorsMiddleware"',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'activity_log.middleware.ActivityLogMiddleware',
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -154,3 +156,10 @@ CORS_ALLOWED_ORIGINS = [
 # CORS_ALLOWED_ORIGIN_REGEXES = [
 #     r"^https://\w+\.example\.com$",
 # ]
+
+
+# # Activity Log
+# # https://github.com/scailer/django-user-activity-log
+#
+# # URL substrings, which ignores
+# ACTIVITYLOG_EXCLUDE_URLS = ('/admin', )
