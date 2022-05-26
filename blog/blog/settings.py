@@ -134,3 +134,8 @@ AUTHENTICATION_BACKENDS = [
     'login.auth.ActiveDirectory.ADBackend'
 ]
 
+# Email
+# testing email backend: will only stdout the email
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = 'emailhost.com'
+EMAIL_PORT = 25
